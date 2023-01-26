@@ -4,6 +4,7 @@ locals {
 
 variable "project" {
   description = "Your GCP Project ID"
+  default = "dtc-de-course-350819"
 }
 
 variable "region" {
@@ -21,4 +22,11 @@ variable "BQ_DATASET" {
   description = "BigQuery Dataset that raw data (from GCS) will be written to"
   type = string
   default = "trips_data_all"
+}
+
+
+variable "TABLE_NAME" {
+  description = "BigQuery Table"
+  type = string
+  default = "ny_trips"
 }

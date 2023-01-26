@@ -24,10 +24,10 @@ def main(params):
     if url.endswith('.csv.gz'):
         csv_name = 'output.csv.gz'
     else:
-        csv_name = 'output.csv'
+        csv_name = 'output.csv.gz'
 
-    os.system(f"wget {url} -O {csv_name}")
-
+    # os.system(f"wget {url} -O {csv_name}")
+    print(os.listdir())
     engine = create_engine(f'postgresql://{user}:{password}@{host}:{port}/{db}')
 
     df_iter = pd.read_csv(csv_name, iterator=True, chunksize=100000)
