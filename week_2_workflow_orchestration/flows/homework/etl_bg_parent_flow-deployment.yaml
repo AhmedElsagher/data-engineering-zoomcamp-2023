@@ -1,0 +1,60 @@
+###
+### A complete description of a Prefect Deployment for flow 'etl-bg-parent-flow'
+###
+name: bg_yellow_2019_02_03
+description: null
+version: 0bf5e231e737d524699cd5001cab4f9a
+# The work queue that will handle this deployment's runs
+work_queue_name: default
+tags: []
+parameters: {
+  "months":[2,3],
+  "color":"yellow",
+  "year":2019
+}
+schedule: null
+infra_overrides: {}
+infrastructure:
+  type: process
+  env: {}
+  labels: {}
+  name: null
+  command: null
+  stream_output: true
+  working_dir: null
+  block_type_slug: process
+  _block_type_slug: process
+
+###
+### DO NOT EDIT BELOW THIS LINE
+###
+flow_name: etl-bg-parent-flow
+manifest_path: null
+storage: null
+path: /home/ahmedelsogheer/Documents/zoom/data-engineering-zoomcamp/week_2_workflow_orchestration/flows/homework
+entrypoint: etl_gcs_to_bg.py:etl_bg_parent_flow
+parameter_openapi_schema:
+  title: Parameters
+  type: object
+  properties:
+    months:
+      title: months
+      default:
+      - 2
+      - 3
+      position: 0
+      type: array
+      items:
+        type: integer
+    year:
+      title: year
+      default: 2019
+      position: 1
+      type: integer
+    color:
+      title: color
+      default: yellow
+      position: 2
+      type: string
+  required: null
+  definitions: null
