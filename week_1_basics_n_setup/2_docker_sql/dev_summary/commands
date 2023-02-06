@@ -1,0 +1,35 @@
+docker run  \
+    -e POSTGRES_USER="root" \
+    --network=pg-network \
+    -e POSTGRES_PASSWORD="root" \
+    -e POSTGRES_DB="ny_taxi" \
+    -v $(pwd)/ny_taxi_postgres_data:/var/lib/postgresql/data \
+    -p 5432:5432 \
+    -d postgres:13
+
+
+docker run  \
+    -e PGADMIN_DEFAULT_EMAIL="admin@admin.com" \
+    -e PGADMIN_DEFAULT_PASSWORD="root" \
+    -p 8080:80 \
+    --network=pg-network2\
+    --name pgadmin \
+     -d dpage/pgadmin4
+
+docker rm -f $(docker ps -a -q)
+
+    --network=pg-network \
+
+
+docker run  \
+    -e PGADMIN_DEFAULT_EMAIL="admin@admin.com" \
+    -e PGADMIN_DEFAULT_PASSWORD="root" \
+    -p 8080:80 \
+    --network=pg-network2\
+    --name pgadmin \
+     -d dpage/pgadmin4
+
+docker rm -f $(docker ps -a -q)
+Q1 if you have 2 containers on 2 networks how to connect
+Q2 docker compose all three services
+Q3

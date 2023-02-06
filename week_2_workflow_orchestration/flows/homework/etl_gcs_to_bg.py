@@ -59,8 +59,8 @@ def etl_bg_parent_flow(
         etl_gcs_to_bg(year=year,color=color,month=month)
 
 if __name__ == '__main__':
-    months =[2,3]
-    year: int=2019
-    color:str="yellow"
+    months =[11]
+    year: int=2020
+    color:str="green"
     etl_bg_parent_flow(months=months,year=year,color=color)
 
